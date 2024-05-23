@@ -1,0 +1,23 @@
+name = "" # FILL THIS FIELD
+compatibility_date = "2023-12-01"
+
+# [vars]
+# MY_VAR = "my-variable"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "" # FILL THIS FIELD
+database_id = "" # FILL THIS FIELD
+preview_database_id = "DB" # Required for Pages local development
+migrations_dir = "drizzle/migrations"
+
+# [ai]
+# binding = "AI"

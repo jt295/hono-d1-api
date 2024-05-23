@@ -1,0 +1,27 @@
+{
+  "name": "hono-d1-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "generate": "drizzle-kit generate",
+    "migrate:local": "wrangler d1 migrations apply d1-todo --local",
+    "migrate:remote": "wrangler d1 execute my-database --remote --file=./src/db/schema.sql",
+    "deploy": "wrangler deploy --minify src/index.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.30.10",
+    "drizzle-zod": "^0.5.1",
+    "hono": "^4.3.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240403.0",
+    "drizzle-kit": "^0.21.2",
+    "wrangler": "^3.47.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
