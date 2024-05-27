@@ -4,7 +4,7 @@ import {
   createRecord,
   deleteRecord,
   getAllRecords,
-  getRecord,
+  getRecordBySlug,
   updateRecord,
 } from "./generic";
 import { z } from "zod";
@@ -19,7 +19,7 @@ export async function getPosts(c: Context) {
 }
 
 export async function getPost(c: Context) {
-  return getRecord(c, posts);
+  return getRecordBySlug(c, posts);
 }
 
 export async function updatePost(c: Context) {

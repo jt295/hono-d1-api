@@ -11,7 +11,7 @@ const postRoutes = new Hono();
 
 postRoutes.post("/", createPost);
 postRoutes.get("/", getPosts);
-postRoutes.get("/:recordId", getPost);
+postRoutes.get("/:slug", getPost);
 postRoutes.patch("/:recordId", updatePost);
 postRoutes.delete("/:recordId", deletePost);
 

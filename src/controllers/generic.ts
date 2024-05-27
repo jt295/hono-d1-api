@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import { Context } from "hono";
 import { parseRequestBody, executeDbOperation, handleError } from "./helpers";
-import { DBTable } from "../db/schema";
+import { DBTable, posts, products } from "../db/schema";
 import { createInsertSchema } from "drizzle-zod";
 
 export async function createRecord(
@@ -33,12 +33,32 @@ export async function deleteRecord(c: Context, table: DBTable) {
 }
 
 export async function getRecord(c: Context, table: DBTable) {
-  console.log(c.req.param());
   const recordId = Number(c.req.param("recordId"));
   try {
     return executeDbOperation(
       c,
       c.var.db.select().from(table).where(eq(table.id, recordId))
+    );
+  } catch (error) {
+    return handleError(c, "Failed to fetch record", error);
+  }
+}
+
+export async function getRecordBySlug(
+  c: Context,
+  table: typeof posts | typeof products
+) {
+  const slug = c.req.param("slug");
+
+  if (!slug) {
+    return handleError(c, "Failed to fetch record", "Not a valid slug");
+  }
+  let title = slug.split("-").join(" ");
+
+  try {
+    return executeDbOperation(
+      c,
+      c.var.db.select().from(table).where(eq(table.title, title))
     );
   } catch (error) {
     return handleError(c, "Failed to fetch record", error);

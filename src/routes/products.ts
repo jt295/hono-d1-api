@@ -11,7 +11,7 @@ const productRoutes = new Hono();
 
 productRoutes.post("/", createProduct);
 productRoutes.get("/", getProducts);
-productRoutes.get("/:recordId", getProduct);
+productRoutes.get("/:slug", getProduct);
 productRoutes.patch("/:recordId", updateProduct);
 productRoutes.delete("/:recordId", deleteProduct);
 

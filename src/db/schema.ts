@@ -1,6 +1,7 @@
 import { integer, real, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { sql } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
 
 export const todos = sqliteTable("todos", {
   id: integer("id").primaryKey({ autoIncrement: true }),
@@ -29,8 +30,17 @@ export const products = sqliteTable("products", {
 });
 
 export const insertTodoSchema = createInsertSchema(todos);
-export const insertPostSchema = createInsertSchema(posts);
-export const insertProductSchema = createInsertSchema(products);
+
+export const insertPostSchema = createInsertSchema(posts, {
+  title: z.string().regex(/a-z 0-9/i, {
+    message: "Titles can only contain letters, spaces, and numbers",
+  }),
+});
+export const insertProductSchema = createInsertSchema(products, {
+  title: z.string().regex(/a-z 0-9/i, {
+    message: "Titles can only contain letters, spaces, and numbers",
+  }),
+});
 
 export type DBTable = typeof todos | typeof posts | typeof products;
 
