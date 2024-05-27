@@ -32,12 +32,12 @@ export const products = sqliteTable("products", {
 export const insertTodoSchema = createInsertSchema(todos);
 
 export const insertPostSchema = createInsertSchema(posts, {
-  title: z.string().regex(/a-z 0-9/i, {
+  title: z.string().regex(/[a-z 0-9]/i, {
     message: "Titles can only contain letters, spaces, and numbers",
   }),
 });
 export const insertProductSchema = createInsertSchema(products, {
-  title: z.string().regex(/a-z 0-9/i, {
+  title: z.string().regex(/[a-z 0-9]/i, {
     message: "Titles can only contain letters, spaces, and numbers",
   }),
 });
