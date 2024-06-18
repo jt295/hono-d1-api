@@ -8,12 +8,15 @@ Participants will bring their laptop, a node and git installation, and a working
 
 ### The workshop will cover
 
-- Background info (brief covering of each point)
+#### Background info (brief covering of each point)
+
 - Downsides and challenges of fully client side applications
 - The benefits of Server rendered applications
 - Covering SSR, ISR, and SSG - where and why you would want to use what
 - Progressive enhancement - what it is and why it matters
-- Interactive coding element
+
+#### Interactive coding element
+
 - Basic scaffolding of a Next.js app
 - Run through of how routing works
 - How to pull data from a (mock) CMS to populate React components and pages
@@ -25,6 +28,7 @@ Participants will bring their laptop, a node and git installation, and a working
 - Streaming content with suspense
 - Creating an API route
 - Creating a form and server actions
+- Optimistic updates with useOptimistic
 - Deploying to Azure
 - Database integration
 - Github repo will be provided with instructions and branches with each step complete in advance so people can move at different paces during the workshop.
@@ -41,3 +45,11 @@ Not all Engineers are likely to be experienced in TypeScript so will be on hand 
 - Products
   - CRUD
   - Title, description, cost, image, id
+
+## Resources for making instructions:
+
+- https://github.com/public-apis/public-apis
+- https://random-d.uk/api
+- https://goqr.me/api/doc/create-qr-code/
+- https://coffee.alexflipnote.dev/
+- https://icanhazdadjoke.com/api#authentication

@@ -17,6 +17,9 @@ importers:
       hono:
         specifier: ^4.3.7
         version: 4.3.7
+      lorem-ipsum:
+        specifier: ^2.0.8
+        version: 2.0.8
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -24,6 +27,9 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20240403.0
         version: 4.20240512.0
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
       drizzle-kit:
         specifier: ^0.21.2
         version: 0.21.2
@@ -820,6 +826,11 @@ packages:
   lodash.throttle@4.1.1:
     resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
 
+  lorem-ipsum@2.0.8:
+    resolution: {integrity: sha512-5RIwHuCb979RASgCJH0VKERn9cQo/+NcAi2BMe9ddj+gp7hujl6BI+qdOG4nVsLDpwWEJwTVYXNKP6BGgbcoGA==}
+    engines: {node: '>= 8.x', npm: '>= 5.x'}
+    hasBin: true
+
   lru-queue@0.1.0:
     resolution: {integrity: sha512-BpdYkt9EvGl8OfWHDQPISVpcl5xZthb+XPsbELj5AQXxIC8IriDZIQYjBJPEm5rS420sjZ0TLEzRcq5KdBhYrQ==}
 
@@ -1578,6 +1589,10 @@ snapshots:
       dreamopt: 0.8.0
 
   lodash.throttle@4.1.1: {}
+
+  lorem-ipsum@2.0.8:
+    dependencies:
+      commander: 9.5.0
 
   lru-queue@0.1.0:
     dependencies:

@@ -11,7 +11,7 @@ export async function parseRequestBody<T>(c: Context, schema: ZodSchema<T>) {
 }
 
 export function handleError(c: Context, message: string, error: any) {
-  return c.json({ message, error });
+  return c.json({ message, error }, 400);
 }
 
 export async function executeDbOperation(c: Context, operation: Promise<any>) {
